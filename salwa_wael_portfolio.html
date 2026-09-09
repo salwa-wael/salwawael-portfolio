@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salwa Wael Youssef | AI Engineering & Data Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        },
+                        accent: {
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            purple: '#8b5cf6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar and glassmorphism styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 selection:bg-brand-500 selection:text-white">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#cover" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-purple flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    SW
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg tracking-tight text-white group-hover:text-brand-500 transition-colors">Salwa Wael</span>
+                    <span class="text-xs text-slate-400 font-mono">AI & ML Engineer</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-slate-300">
+                <a href="#about" class="hover:text-brand-500 transition-colors">About</a>
+                <a href="#services" class="hover:text-brand-500 transition-colors">Services</a>
+                <a href="#skills" class="hover:text-brand-500 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-brand-500 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-brand-500 transition-colors">Projects</a>
+                <a href="#education" class="hover:text-brand-500 transition-colors">Education</a>
+                <a href="#contact" class="hover:text-brand-500 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Actions Header -->
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-accent-purple hover:from-brand-500 hover:to-brand-600 text-white font-semibold text-sm shadow-md shadow-brand-600/30 hover:shadow-lg transition-all">
+                    <span>Contact Me</span>
+                    <i class="fa-solid fa-paper-plane ml-2 text-xs"></i>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-6 space-y-4 font-medium text-slate-300">
+            <a href="#about" class="block hover:text-brand-500 py-1">About</a>
+            <a href="#services" class="block hover:text-brand-500 py-1">Services</a>
+            <a href="#skills" class="block hover:text-brand-500 py-1">Skills & Tools</a>
+            <a href="#experience" class="block hover:text-brand-500 py-1">Experience</a>
+            <a href="#projects" class="block hover:text-brand-500 py-1">Projects & Visuals</a>
+            <a href="#education" class="block hover:text-brand-500 py-1">Education & Certifications</a>
+            <a href="#contact" class="block hover:text-brand-500 py-1">Contact Me</a>
+        </div>
+    </header>
+
+    <section id="cover" class="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+        <!-- Background Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[350px] h-[350px] bg-accent-cyan/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Hi, I'm <span class="gradient-text">Salwa Wael</span>
+                    </h1>
+
+                    <p class="text-xl sm:text-2xl font-bold text-slate-300">
+                        AI Engineer <span class="text-brand-500">|</span> Data Specialist
+                    </p>
+
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl font-normal leading-relaxed">
+                        AI Engineer focused on crafting intelligent data-driven models, machine learning algorithms, and sentiment analysis — with hands-on experience in relational database design that drives business clarity.
+                    </p>
+
+                    <!-- Primary CTAs -->
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#projects" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-base shadow-lg shadow-brand-600/30 hover:scale-[1.02] transition-all text-center">
+                            Explore Projects <i class="fa-solid fa-arrow-down ml-2 text-sm"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-slate-500 text-slate-200 font-semibold text-base hover:bg-slate-800 transition-all text-center">
+                            Contact Me
+                        </a>
+                    </div>
+
+                    <!-- Location & Contact Badges -->
+                    <div class="pt-6 border-t border-slate-800/80 flex flex-wrap justify-center lg:justify-start gap-6 text-xs sm:text-sm font-mono text-slate-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-location-dot text-brand-500"></i>
+                            <span>Benha, Qalyubia, Egypt</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-brand-500"></i>
+                            <span>salwawael2006@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-graduation-cap text-brand-500"></i>
+                            <span>Benha National University</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center justify-center lg:justify-start space-x-4 pt-2">
+                        <a href="https://linkedin.com/in/salwa-wael" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 hover:border-brand-500 flex items-center justify-center text-slate-400 hover:text-brand-500 transition-all">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="https://github.com/salwa-wael" target="_blank" rel="noopener" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 hover:border-brand-500 flex items-center justify-center text-slate-400 hover:text-brand-500 transition-all">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                        <a href="mailto:salwawael2006@gmail.com" class="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 hover:border-brand-500 flex items-center justify-center text-slate-400 hover:text-brand-500 transition-all">
+                            <i class="fa-solid fa-envelope text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Glowing Halo -->
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-600 via-accent-purple to-accent-cyan opacity-40 blur-lg"></div>
+                        
+                        <!-- Domain Architecture Showcase Card -->
+                        <div class="relative rounded-2xl glass-card p-6 sm:p-8 space-y-6 border border-slate-800">
+                            <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">Engineering Specializations</span>
+                            </div>
+
+                            <!-- Key Technical Pillar Badges -->
+                            <div class="space-y-3">
+                                <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center space-x-3">
+                                    <div class="p-2.5 rounded-lg bg-brand-500/10 text-brand-500 text-lg">
+                                        <i class="fa-solid fa-brain"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white">Machine Learning & AI</h4>
+                                        <p class="text-xs text-slate-400">Predictive modeling, classification & pipelines</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center space-x-3">
+                                    <div class="p-2.5 rounded-lg bg-accent-cyan/10 text-accent-cyan text-lg">
+                                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white">Data Analysis & NLP</h4>
+                                        <p class="text-xs text-slate-400">EDA, sentiment analysis & visualization</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center space-x-3">
+                                    <div class="p-2.5 rounded-lg bg-accent-emerald/10 text-accent-emerald text-lg">
+                                        <i class="fa-solid fa-database"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white">Database Systems & SQL</h4>
+                                        <p class="text-xs text-slate-400">Normalized ERD schema & PL/SQL triggers</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+                                <span class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-1.5"></i> Scalable AI Solutions</span>
+                                <span class="text-brand-400">Engineered with Precision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-slate-900/50 border-y border-slate-800/80 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">01. About Me</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Turning Data into Actionable Intelligence</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Personal Narrative & Story -->
+                <div class="lg:col-span-7 space-y-6 text-slate-300 leading-relaxed text-base sm:text-lg">
+                    <p>
+                        I'm a Computer Science professional focused on the intersection of <strong class="text-white">Artificial Intelligence</strong>, <strong class="text-white">Machine Learning</strong>, and <strong class="text-white">Data Analytics</strong> — turning raw data into actionable insight.
+                    </p>
+                    <p>
+                        During my engineering internship at <strong class="text-white">Innovatera</strong> (in collaboration with the French University in Egypt), I built practical solutions across Python development, data cleaning, automated feature engineering, and UI web design. I also authored technical educational videos and presented project proposals to expert evaluator panels.
+                    </p>
+                    <p>
+                        I further sharpened my AI foundations through a <strong class="text-white">100-hour AI Master Class</strong> at <strong class="text-white">Creativa Hub</strong>, deepening my understanding of intelligent systems and data-driven modeling.
+                    </p>
+                    <p>
+                        Beyond traditional coding, I combine analytical critical thinking with creative design discipline — holding leadership experience as Assistant Head of the Art Committee at the Faculty Student Union.
+                    </p>
+
+                    <!-- Handout USP Highlight Callout Box -->
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-brand-500/30 relative overflow-hidden shadow-xl">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-brand-500/10 rounded-full blur-2xl"></div>
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 rounded-xl bg-brand-600/20 text-brand-500 text-2xl shrink-0 mt-1">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase font-mono font-bold tracking-wider text-brand-400 mb-1">Unique Selling Proposition (USP)</h4>
+                                <p class="text-slate-200 font-semibold text-base sm:text-lg italic">
+                                    "I help businesses and technical teams extract clarity from complex datasets by designing normalized database structures, training scalable predictive models, and crafting clean analytical web dashboards."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Attributes Card Grid -->
+                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-5 rounded-xl glass-card space-y-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Analytical Problem Solver</h3>
+                        <p class="text-xs text-slate-400 leading-normal">Deep focus on data pre-processing, feature selection, and logical model building.</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl glass-card space-y-3">
+                        <div class="w-10 h-10 rounded-lg bg-accent-cyan/10 text-accent-cyan flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Technical Communicator</h3>
+                        <p class="text-xs text-slate-400 leading-normal">Experienced in presenting complex AI concepts clearly through public speaking and video media.</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl glass-card space-y-3">
+                        <div class="w-10 h-10 rounded-lg bg-accent-emerald/10 text-accent-emerald flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Database Architect</h3>
+                        <p class="text-xs text-slate-400 leading-normal">Proficient in 3NF schema normalization, PL/SQL trigger creation, and ERD/EER modeling.</p>
+                    </div>
+
+                    <div class="p-5 rounded-xl glass-card space-y-3">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">Creative & Detail-Oriented</h3>
+                        <p class="text-xs text-slate-400 leading-normal">Merging artistic visual sensibility with software engineering precision.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">02. Core Services</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">How I Can Add Value To Your Projects</p>
+                <p class="text-slate-400 text-sm sm:text-base">Targeted freelance and engineering solutions tailored for business efficiency.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl glass-card hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 text-brand-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Data Analysis & Visualization</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Cleaning raw datasets, conducting Exploratory Data Analysis (EDA), feature engineering, and generating insightful visual charts using Pandas, Matplotlib, and Seaborn.
+                    </p>
+                    <ul class="text-xs font-mono text-slate-300 space-y-2">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Exploratory Data Analysis (EDA)</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Statistical Feature Engineering</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Visual Analytics Dashboards</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl glass-card hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-accent-cyan/20 text-accent-cyan flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Machine Learning Modeling</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Developing and evaluating predictive ML models using Scikit-learn, optimizing algorithm hyperparameters, and structuring ML pipelines for real-world tasks.
+                    </p>
+                    <ul class="text-xs font-mono text-slate-300 space-y-2">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Predictive Model Training</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Model Evaluation & Metrics</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Business Logic AI Automation</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl glass-card hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-accent-emerald/20 text-accent-emerald flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Database Architecture & SQL</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Designing normalized relational database schemas (ERD/EER), enforcing business integrity constraints, writing efficient SQL queries, PL/SQL triggers, and views.
+                    </p>
+                    <ul class="text-xs font-mono text-slate-300 space-y-2">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> ERD / EER Schema Modeling</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Oracle DB & PL/SQL Triggers</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Data Integrity Normalization</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-2xl glass-card hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Front-End & UI/UX Development</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Building responsive, accessible modern web interfaces using HTML5, CSS3, and JavaScript with clean UI design guidelines.
+                    </p>
+                    <ul class="text-xs font-mono text-slate-300 space-y-2">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Responsive Web Layouts</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> UI/UX Design Prototyping</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Dynamic User Interfaces</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="p-8 rounded-2xl glass-card hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Technical Content & Explanation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Translating complex programming, AI, and computer science concepts into engaging educational video media and clear technical presentations.
+                    </p>
+                    <ul class="text-xs font-mono text-slate-300 space-y-2">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Educational Video Production</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Tech Pitching & Public Speaking</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Concept Documentation</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="p-8 rounded-2xl glass-card hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Network & Systems Fundamentals</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Applying core networking principles based on Cisco CCNA standards to support software deployment and data communication protocols.
+                    </p>
+                    <ul class="text-xs font-mono text-slate-300 space-y-2">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Cisco CCNA Routing/Switching</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> IP Addressing & Subnetting</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Network Security Concepts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">03. Technical Stack</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Skills & Technologies</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Programming Languages -->
+                <div class="p-6 rounded-2xl glass-card space-y-4">
+                    <div class="flex items-center space-x-3 text-brand-500">
+                        <i class="fa-solid fa-code text-xl"></i>
+                        <h3 class="font-bold text-white text-lg">Programming Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Python</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">C++</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Machine Learning & AI -->
+                <div class="p-6 rounded-2xl glass-card space-y-4">
+                    <div class="flex items-center space-x-3 text-accent-cyan">
+                        <i class="fa-solid fa-microchip text-xl"></i>
+                        <h3 class="font-bold text-white text-lg">Machine Learning</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Data Preprocessing</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Feature Engineering</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Model Training</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <!-- Data Analysis & Processing -->
+                <div class="p-6 rounded-2xl glass-card space-y-4">
+                    <div class="flex items-center space-x-3 text-accent-emerald">
+                        <i class="fa-solid fa-chart-pie text-xl"></i>
+                        <h3 class="font-bold text-white text-lg">Data Analysis</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Pandas</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">NumPy</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Data Cleaning</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Matplotlib</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Seaborn</span>
+                    </div>
+                </div>
+
+                <!-- Databases & Architecture -->
+                <div class="p-6 rounded-2xl glass-card space-y-4">
+                    <div class="flex items-center space-x-3 text-purple-400">
+                        <i class="fa-solid fa-server text-xl"></i>
+                        <h3 class="font-bold text-white text-lg">Databases</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Oracle DB</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">PL/SQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">ERD/EER Modeling</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Relational Mapping</span>
+                    </div>
+                </div>
+
+                <!-- Web Development & Tools -->
+                <div class="p-6 rounded-2xl glass-card space-y-4">
+                    <div class="flex items-center space-x-3 text-amber-400">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                        <h3 class="font-bold text-white text-lg">Web & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">HTML5 / CSS3</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">UI/UX Design</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Git / GitHub</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Cisco CCNAv7</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">MS Excel / Office</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills & Languages -->
+                <div class="p-6 rounded-2xl glass-card space-y-4">
+                    <div class="flex items-center space-x-3 text-red-400">
+                        <i class="fa-solid fa-heart-pulse text-xl"></i>
+                        <h3 class="font-bold text-white text-lg">Soft Skills & Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Problem Solving</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Public Speaking</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">Arabic (Native)</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs font-mono text-slate-200">English (Fluent)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">04. Career Journey</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Work Experience</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Experience Card Container -->
+            <div class="max-w-4xl mx-auto">
+                <div class="relative pl-6 sm:pl-8 border-l-2 border-brand-500/40 space-y-12">
+                    
+                    <!-- Experience Item: Innovatera -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-5 h-5 rounded-full bg-slate-950 border-4 border-brand-500 group-hover:scale-125 transition-transform"></div>
+
+                        <div class="p-6 sm:p-8 rounded-2xl glass-card space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                                <div>
+                                    <h3 class="text-xl font-extrabold text-white">Programming Intern</h3>
+                                    <p class="text-brand-400 font-medium text-sm">
+                                        Innovatera <span class="text-slate-400">(In collaboration with the French University in Egypt)</span>
+                                    </p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-mono w-fit">
+                                    Nov 20, 2025 – Dec 27, 2025
+                                </span>
+                            </div>
+
+                            <ul class="space-y-3 text-slate-300 text-sm leading-relaxed">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-caret-right text-brand-500 mt-1 mr-3 shrink-0"></i>
+                                    <span>Gained hands-on experience in Python programming fundamentals across an intensive track, including problem-solving, code structuring, and application logic.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-caret-right text-brand-500 mt-1 mr-3 shrink-0"></i>
+                                    <span>Applied Python algorithms in real-world scenarios including data analysis, business process automation, and practical problem-solving.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-caret-right text-brand-500 mt-1 mr-3 shrink-0"></i>
+                                    <span>Studied core concepts of Artificial Intelligence and Machine Learning for business decision-making, data preparation, and pipeline development.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-caret-right text-brand-500 mt-1 mr-3 shrink-0"></i>
+                                    <span>Acquired web design principles covering UI/UX best practices and successfully designed responsive web interfaces.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-caret-right text-brand-500 mt-1 mr-3 shrink-0"></i>
+                                    <span>Created and delivered educational programming videos published on social platforms to simplify complex tech topics for learners.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-caret-right text-brand-500 mt-1 mr-3 shrink-0"></i>
+                                    <span>Presented final project outcomes during a competitive evaluation day to a panel of technical evaluators.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Python</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Data Analysis</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Machine Learning</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">UI/UX Web Design</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] font-mono text-slate-300">Public Speaking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">05. Practical Work</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Featured Project Case Studies</p>
+                <p class="text-slate-400 text-sm sm:text-base">Custom database architectures and natural language processing pipelines accompanied by illustrative visual diagrams.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-16">
+                
+                <!-- PROJECT 1: Online Learning Platform Database System -->
+                <div class="p-6 sm:p-10 rounded-3xl glass-card border border-slate-800 hover:border-brand-500/40 transition-all">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        
+                        <!-- Project Details -->
+                        <div class="lg:col-span-6 space-y-5">
+                            <div class="flex items-center space-x-3">
+                                <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-xs font-mono font-bold">
+                                    Role: Database Engineer
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono"><i class="fa-solid fa-database text-brand-500 mr-1"></i> Oracle SQL & PL/SQL</span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                                Online Learning Platform Database System
+                            </h3>
+
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                Designed and implemented a relational database schema to power an online learning environment. Modeled entities through complete ERD/EER diagrams, translated them into normalized tables, and enforced automated business rules using PL/SQL triggers.
+                            </p>
+
+                            <!-- Key Technical Deliverables -->
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1 mr-2 shrink-0"></i>
+                                    <span><strong>Normalized Relational Schema:</strong> Built in 3rd Normal Form (3NF) encompassing Users, Instructors, Courses, Enrollments, Reviews, and Certifications.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1 mr-2 shrink-0"></i>
+                                    <span><strong>PL/SQL Business Triggers:</strong> Automated business rule verification for enrollment capacity, prerequisite validation, and course review authorization.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1 mr-2 shrink-0"></i>
+                                    <span><strong>Analytical Database Views:</strong> Built custom SQL Views for real-time tracking of learner progression and course metrics.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Oracle DB</span>
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">SQL</span>
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">PL/SQL</span>
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">ERD Schema Design</span>
+                            </div>
+                        </div>
+
+                        <!-- Professional Database / ERD Visual Graphic -->
+                        <div class="lg:col-span-6">
+                            <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-4">
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-diagram-project text-brand-500"></i>
+                                        <span class="text-xs font-mono font-bold text-slate-200">Relational Database Schema & ERD Architecture</span>
+                                    </div>
+                                    <span class="text-[10px] font-mono text-slate-500 uppercase">Interactive Visual</span>
+                                </div>
+
+                                <!-- Custom High-Quality ERD Visual -->
+                                <div class="w-full h-auto bg-slate-900/90 rounded-xl p-4 overflow-x-auto">
+                                    <svg viewBox="0 0 500 280" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Grid Background Pattern -->
+                                        <defs>
+                                            <pattern id="erd-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+                                            </pattern>
+                                        </defs>
+                                        <rect width="500" height="280" fill="url(#erd-grid)" rx="6"/>
+
+                                        <!-- Entity Node: STUDENTS -->
+                                        <rect x="20" y="25" width="135" height="100" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+                                        <rect x="20" y="25" width="135" height="26" rx="8" fill="#312e81"/>
+                                        <text x="32" y="42" fill="#ffffff" font-family="monospace" font-size="11" font-weight="bold">STUDENTS</text>
+                                        <text x="30" y="68" fill="#a5b4fc" font-family="monospace" font-size="9">PK  student_id</text>
+                                        <text x="30" y="83" fill="#94a3b8" font-family="monospace" font-size="9">    full_name</text>
+                                        <text x="30" y="98" fill="#94a3b8" font-family="monospace" font-size="9">    email_address</text>
+                                        <text x="30" y="113" fill="#94a3b8" font-family="monospace" font-size="9">    created_at</text>
+
+                                        <!-- Entity Node: COURSES -->
+                                        <rect x="345" y="25" width="135" height="100" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+                                        <rect x="345" y="25" width="135" height="26" rx="8" fill="#164e63"/>
+                                        <text x="357" y="42" fill="#ffffff" font-family="monospace" font-size="11" font-weight="bold">COURSES</text>
+                                        <text x="355" y="68" fill="#67e8f9" font-family="monospace" font-size="9">PK  course_id</text>
+                                        <text x="355" y="83" fill="#94a3b8" font-family="monospace" font-size="9">FK  instructor_id</text>
+                                        <text x="355" y="98" fill="#94a3b8" font-family="monospace" font-size="9">    title_name</text>
+                                        <text x="355" y="113" fill="#94a3b8" font-family="monospace" font-size="9">    category_code</text>
+
+                                        <!-- Entity Node: ENROLLMENTS (Junction Table) -->
+                                        <rect x="180" y="150" width="140" height="105" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+                                        <rect x="180" y="150" width="140" height="26" rx="8" fill="#064e3b"/>
+                                        <text x="192" y="167" fill="#ffffff" font-family="monospace" font-size="11" font-weight="bold">ENROLLMENTS</text>
+                                        <text x="190" y="193" fill="#6ee7b7" font-family="monospace" font-size="9">PK  enrollment_id</text>
+                                        <text x="190" y="208" fill="#94a3b8" font-family="monospace" font-size="9">FK  student_id</text>
+                                        <text x="190" y="223" fill="#94a3b8" font-family="monospace" font-size="9">FK  course_id</text>
+                                        <text x="190" y="238" fill="#94a3b8" font-family="monospace" font-size="9">    status_state</text>
+
+                                        <!-- Relationship Connector Paths -->
+                                        <!-- Students -> Enrollments -->
+                                        <path d="M 87 125 L 87 202 L 180 202" stroke="#6366f1" stroke-width="2" stroke-dasharray="4 2"/>
+                                        <circle cx="87" cy="125" r="3" fill="#6366f1"/>
+                                        <polygon points="175,199 182,202 175,205" fill="#6366f1"/>
+
+                                        <!-- Courses -> Enrollments -->
+                                        <path d="M 412 125 L 412 202 L 320 202" stroke="#06b6d4" stroke-width="2" stroke-dasharray="4 2"/>
+                                        <circle cx="412" cy="125" r="3" fill="#06b6d4"/>
+                                        <polygon points="325,199 318,202 325,205" fill="#06b6d4"/>
+                                    </svg>
+                                </div>
+                                <p class="text-[11px] text-slate-400 font-mono text-center">
+                                    Normalized 3NF relational layout with entity keys, constraints, and relational mappings.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- PROJECT 2: Clothing Review System (Sentiment Analysis) -->
+                <div class="p-6 sm:p-10 rounded-3xl glass-card border border-slate-800 hover:border-brand-500/40 transition-all">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        
+                        <!-- Project Details -->
+                        <div class="lg:col-span-6 space-y-5">
+                            <div class="flex items-center space-x-3">
+                                <span class="px-3 py-1 rounded-full bg-accent-cyan/20 text-accent-cyan text-xs font-mono font-bold">
+                                    Role: ML & Natural Language Processing Specialist
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono"><i class="fa-solid fa-comments text-accent-cyan mr-1"></i> NLP & Sentiment Analysis</span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                                Clothing Review Sentiment Analysis System
+                            </h3>
+
+                            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                                Engineered an end-to-end natural language processing pipeline designed to classify customer sentiment from e-commerce clothing feedback. Performs text tokenization, TF-IDF vectorization, feature extraction, and automated sentiment breakdown.
+                            </p>
+
+                            <!-- Key Technical Deliverables -->
+                            <div class="space-y-2 text-xs sm:text-sm text-slate-300">
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1 mr-2 shrink-0"></i>
+                                    <span><strong>Text Processing Pipeline:</strong> Automated stop-word filtering, lemmatization, and TF-IDF feature representation using Python.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1 mr-2 shrink-0"></i>
+                                    <span><strong>Multi-Class Sentiment Categorization:</strong> Structured feedback classification into positive, neutral, and negative sentiment classes.</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-circle-check text-emerald-400 mt-1 mr-2 shrink-0"></i>
+                                    <span><strong>Customer Insight Dashboard:</strong> Visualizing sentiment trends across garment categories, fit aspects, and product ratings.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Python</span>
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">NLP</span>
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Pandas</span>
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Scikit-Learn</span>
+                                <span class="px-3 py-1 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-slate-300">Seaborn</span>
+                            </div>
+                        </div>
+
+                        <!-- Professional Sentiment Analysis / Dashboard Graphic (Conceptual - No performance numbers) -->
+                        <div class="lg:col-span-6">
+                            <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 space-y-4">
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-chart-pie text-accent-cyan"></i>
+                                        <span class="text-xs font-mono font-bold text-slate-200">Sentiment Analytics & Customer Feedback Pipeline</span>
+                                    </div>
+                                    <span class="text-[10px] font-mono text-slate-500 uppercase">Dashboard Graphic</span>
+                                </div>
+
+                                <!-- Custom High-Quality Sentiment Dashboard SVG -->
+                                <div class="w-full h-auto bg-slate-900/90 rounded-xl p-4 overflow-x-auto">
+                                    <svg viewBox="0 0 500 280" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <!-- Conceptual Module Status Pills -->
+                                        <rect x="20" y="20" width="140" height="45" rx="8" fill="#1e293b" stroke="#334155"/>
+                                        <text x="32" y="38" fill="#94a3b8" font-family="sans-serif" font-size="9">Pipeline Status</text>
+                                        <text x="32" y="54" fill="#10b981" font-family="monospace" font-size="11" font-weight="bold">● Active & Processed</text>
+
+                                        <rect x="180" y="20" width="140" height="45" rx="8" fill="#1e293b" stroke="#334155"/>
+                                        <text x="192" y="38" fill="#94a3b8" font-family="sans-serif" font-size="9">Feature Vectorizer</text>
+                                        <text x="192" y="54" fill="#06b6d4" font-family="monospace" font-size="11" font-weight="bold">TF-IDF Tokenized</text>
+
+                                        <rect x="340" y="20" width="140" height="45" rx="8" fill="#1e293b" stroke="#334155"/>
+                                        <text x="352" y="38" fill="#94a3b8" font-family="sans-serif" font-size="9">Domain Focus</text>
+                                        <text x="352" y="54" fill="#a855f7" font-family="monospace" font-size="11" font-weight="bold">E-Commerce Reviews</text>
+
+                                        <!-- Sentiment Breakdown Bar Chart -->
+                                        <rect x="20" y="80" width="220" height="175" rx="8" fill="#1e293b" stroke="#334155"/>
+                                        <text x="32" y="102" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">Sentiment Class Breakdown</text>
+                                        
+                                        <!-- Bars for Sentiment -->
+                                        <rect x="40" y="130" width="35" height="90" rx="4" fill="#10b981"/>
+                                        <text x="38" y="234" fill="#94a3b8" font-family="sans-serif" font-size="9">Positive</text>
+
+                                        <rect x="112" y="160" width="35" height="60" rx="4" fill="#6366f1"/>
+                                        <text x="113" y="234" fill="#94a3b8" font-family="sans-serif" font-size="9">Neutral</text>
+
+                                        <rect x="184" y="185" width="35" height="35" rx="4" fill="#f43f5e"/>
+                                        <text x="180" y="234" fill="#94a3b8" font-family="sans-serif" font-size="9">Negative</text>
+
+                                        <!-- Aspect Keyword Heatmap / Category Grid -->
+                                        <rect x="260" y="80" width="220" height="175" rx="8" fill="#1e293b" stroke="#334155"/>
+                                        <text x="272" y="102" fill="#e2e8f0" font-family="sans-serif" font-size="11" font-weight="bold">Aspect Sentiment Distribution</text>
+                                        
+                                        <!-- Category Item 1: Fit & Size -->
+                                        <text x="272" y="130" fill="#cbd5e1" font-family="sans-serif" font-size="10">Garment Fit & Sizing</text>
+                                        <rect x="272" y="138" width="190" height="8" rx="4" fill="#334155"/>
+                                        <rect x="272" y="138" width="145" height="8" rx="4" fill="#06b6d4"/>
+
+                                        <!-- Category Item 2: Fabric Quality -->
+                                        <text x="272" y="165" fill="#cbd5e1" font-family="sans-serif" font-size="10">Material & Fabric Quality</text>
+                                        <rect x="272" y="173" width="190" height="8" rx="4" fill="#334155"/>
+                                        <rect x="272" y="173" width="160" height="8" rx="4" fill="#10b981"/>
+
+                                        <!-- Category Item 3: Price & Value -->
+                                        <text x="272" y="200" fill="#cbd5e1" font-family="sans-serif" font-size="10">Price & Value Perception</text>
+                                        <rect x="272" y="208" width="190" height="8" rx="4" fill="#334155"/>
+                                        <rect x="272" y="208" width="120" height="8" rx="4" fill="#a855f7"/>
+                                    </svg>
+                                </div>
+                                <p class="text-[11px] text-slate-400 font-mono text-center">
+                                    Natural Language Processing flow: Sentiment classification & aspect analysis across clothing reviews.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Education Column -->
+                <div class="space-y-8">
+                    <div class="space-y-3">
+                        <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">06. Academic Background</h2>
+                        <h3 class="text-3xl font-extrabold text-white">Education</h3>
+                        <div class="w-12 h-1 bg-brand-500 rounded-full"></div>
+                    </div>
+
+                    <div class="p-8 rounded-2xl glass-card space-y-4 border-l-4 border-l-brand-500">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 font-mono text-xs font-bold">Faculty of Computer Science</span>
+                            <span class="text-xs text-slate-400 font-mono"><i class="fa-solid fa-graduation-cap text-brand-500 mr-1"></i> Specialization</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Bachelor of Computer Science</h4>
+                        <p class="text-slate-300 font-medium text-sm">Benha National University</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Computer Science background focusing on algorithms, database design, software engineering, machine learning foundations, and data analytics.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certifications Column -->
+                <div class="space-y-8">
+                    <div class="space-y-3">
+                        <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">07. Credentials & Learning</h2>
+                        <h3 class="text-3xl font-extrabold text-white">Courses & Certifications</h3>
+                        <div class="w-12 h-1 bg-accent-cyan rounded-full"></div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- AI Master Class -->
+                        <div class="p-5 rounded-xl glass-card flex items-start space-x-4">
+                            <div class="p-3 rounded-lg bg-slate-800 text-brand-500 text-xl shrink-0 mt-0.5">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div class="space-y-1.5 min-w-0 flex-1">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
+                                    <h4 class="font-bold text-white text-base leading-snug">Artificial Intelligence Master Class</h4>
+                                    <span class="text-xs font-mono text-slate-300 bg-slate-800/90 border border-slate-700/80 px-2.5 py-0.5 rounded-md shrink-0 w-fit">Creative Hub Benha</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">Creativa Hub, Benha National University — 100 hours (July–August 2026)</p>
+                            </div>
+                        </div>
+
+                        <!-- Cert 1 -->
+                        <div class="p-5 rounded-xl glass-card flex items-start space-x-4">
+                            <div class="p-3 rounded-lg bg-slate-800 text-brand-500 text-xl shrink-0 mt-0.5">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div class="space-y-1.5 min-w-0 flex-1">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
+                                    <h4 class="font-bold text-white text-base leading-snug">Data Analysis Track</h4>
+                                    <span class="text-xs font-mono text-slate-300 bg-slate-800/90 border border-slate-700/80 px-2.5 py-0.5 rounded-md shrink-0 w-fit">GDG Track</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">Google Developer Groups (GDG) on Campus, Benha National University</p>
+                            </div>
+                        </div>
+
+                        <!-- Cert 2 -->
+                        <div class="p-5 rounded-xl glass-card flex items-start space-x-4">
+                            <div class="p-3 rounded-lg bg-slate-800 text-accent-cyan text-xl shrink-0 mt-0.5">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div class="space-y-1.5 min-w-0 flex-1">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
+                                    <h4 class="font-bold text-white text-base leading-snug">Front-End Development Track</h4>
+                                    <span class="text-xs font-mono text-slate-300 bg-slate-800/90 border border-slate-700/80 px-2.5 py-0.5 rounded-md shrink-0 w-fit">GDG Track</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">Google Developer Groups (GDG) on Campus, Benha National University</p>
+                            </div>
+                        </div>
+
+                        <!-- Cert 3 -->
+                        <div class="p-5 rounded-xl glass-card flex items-start space-x-4">
+                            <div class="p-3 rounded-lg bg-slate-800 text-accent-emerald text-xl shrink-0 mt-0.5">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div class="space-y-1.5 min-w-0 flex-1">
+                                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
+                                    <h4 class="font-bold text-white text-base leading-snug">CCNAv7: Introduction to Networks</h4>
+                                    <span class="text-xs font-mono text-slate-300 bg-slate-800/90 border border-slate-700/80 px-2.5 py-0.5 rounded-md shrink-0 w-fit">Cisco Academy</span>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed">Cisco Networking Academy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">08. Leadership & Community</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Extracurricular Activities</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="p-8 rounded-2xl glass-card space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-users-gear"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white">Assistant Head of the Art Committee</h3>
+                                <p class="text-slate-400 text-sm">Faculty Committee Leadership | Faculty of Computer Science, BNU</p>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 font-mono text-xs w-fit">
+                            Leadership Role
+                        </span>
+                    </div>
+
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Organized and coordinated artistic activities and university cultural events. Collaborated in planning creative initiatives, managing workshops, and driving engagement across campus.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2 text-center font-mono text-xs">
+                        <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300">
+                            <i class="fa-solid fa-list-check text-brand-500 block mb-1"></i> Event Planning
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300">
+                            <i class="fa-solid fa-people-group text-accent-cyan block mb-1"></i> Team Coordination
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300">
+                            <i class="fa-solid fa-paintbrush text-accent-emerald block mb-1"></i> Visual Design
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <!-- Glow effects -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-600/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-xs uppercase font-mono font-bold tracking-widest text-brand-500">09. Get In Touch</h2>
+                <p class="text-3xl sm:text-5xl font-extrabold text-white">Let's Work Together</p>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Have a data challenge, machine learning project, or engineering role? Feel free to reach out directly.
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-brand-500 to-accent-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Direct Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="p-6 rounded-2xl glass-card space-y-6">
+                        <h3 class="text-xl font-bold text-white mb-4">Contact Details</h3>
+
+                        <!-- Phone -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-mono block">Phone</span>
+                                <a href="tel:+201022029460" class="text-slate-200 hover:text-brand-500 font-semibold transition-colors">+20 102 202 9460</a>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent-cyan/10 text-accent-cyan flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-mono block">Email</span>
+                                <a href="mailto:salwawael2006@gmail.com" class="text-slate-200 hover:text-accent-cyan font-semibold transition-colors">salwawael2006@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent-emerald/10 text-accent-emerald flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 font-mono block">Location</span>
+                                <span class="text-slate-200 font-semibold">Benha, Qalyubia, Egypt</span>
+                            </div>
+                        </div>
+
+                        <!-- Social Profiles -->
+                        <div class="pt-4 border-t border-slate-800 space-y-3">
+                            <span class="text-xs text-slate-400 font-mono block">Online Profiles</span>
+                            <div class="flex space-x-3">
+                                <a href="https://linkedin.com/in/salwa-wael" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-brand-500 hover:border-brand-500/50 text-xs font-mono transition-all flex items-center space-x-2">
+                                    <i class="fa-brands fa-linkedin"></i> <span>LinkedIn Profile</span>
+                                </a>
+                                <a href="https://github.com/salwa-wael" target="_blank" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-brand-500 hover:border-brand-500/50 text-xs font-mono transition-all flex items-center space-x-2">
+                                    <i class="fa-brands fa-github"></i> <span>GitHub Code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="lg:col-span-7">
+                    <form id="contact-form" class="p-8 rounded-2xl glass-card space-y-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Send A Message</h3>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-mono text-slate-300">Your Name</label>
+                                <input type="text" required placeholder="e.g. Alex Smith" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-colors">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-mono text-slate-300">Your Email</label>
+                                <input type="email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-mono text-slate-300">Subject</label>
+                            <input type="text" required placeholder="Project Inquiry / Opportunity" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-colors">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-mono text-slate-300">Message</label>
+                            <textarea rows="4" required placeholder="Describe your project or requirement..." class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-accent-purple hover:from-brand-500 hover:to-brand-600 text-white font-bold text-base shadow-lg shadow-brand-600/30 transition-all flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                        </button>
+
+                        <div id="form-response" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs text-center font-mono">
+                            Thank you! Your message has been sent successfully. Salwa will reply shortly.
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-xs text-slate-500 font-mono">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Salwa Wael Youssef. All rights reserved.</p>
+            <p>AI Engineering & Data Portfolio</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Navigation Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
+
+            // Close menu on link click
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        }
+
+        // Form submission simulation
+        const contactForm = document.getElementById('contact-form');
+        const formResponse = document.getElementById('form-response');
+
+        if (contactForm && formResponse) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formResponse.classList.remove('hidden');
+                contactForm.reset();
+                setTimeout(() => {
+                    formResponse.classList.add('hidden');
+                }, 5000);
+            });
+        }
+    </script>
+</body>
+</html>
